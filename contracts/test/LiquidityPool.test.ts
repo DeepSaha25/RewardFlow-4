@@ -1,17 +1,19 @@
 import { expect } from "chai";
-import { ethers } from "hardhat";
+import hre from "hardhat";
 import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs";
+
+const { ethers } = hre;
 
 describe("AdvancedToken + LiquidityPool", function () {
   async function deployFixture() {
     const [owner, alice] = await ethers.getSigners();
 
     const tokenFactory = await ethers.getContractFactory("AdvancedToken");
-    const token = await tokenFactory.deploy(owner.address);
+    const token = (await tokenFactory.deploy(owner.address)) as any;
     await token.waitForDeployment();
 
     const poolFactory = await ethers.getContractFactory("LiquidityPool");
-    const pool = await poolFactory.deploy(await token.getAddress(), owner.address, 500);
+    const pool = (await poolFactory.deploy(await token.getAddress(), owner.address, 500)) as any;
     await pool.waitForDeployment();
 
     const minterRole = await token.MINTER_ROLE();
