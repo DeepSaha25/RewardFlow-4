@@ -1,0 +1,19 @@
+{
+  "name": "advanced-contract-production",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run -w contracts test",
+    "build": "npm run -w contracts build && npm run -w web build",
+    "lint": "npm run -w web lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": "true",
+  "workspaces": [
+    "contracts",
+    "web"
+  ]
+}
