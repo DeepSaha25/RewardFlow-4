@@ -1,6 +1,8 @@
-# Advanced Contract Patterns + Production Readiness
+# 🌊 RewardFlow
 
-Production-ready dApp implementing inter-contract calls, custom token and liquidity pool mechanics, real-time event streaming, CI/CD, mobile responsive UI, and error tracking.
+**A production-ready dApp for inter-contract liquidity pooling with real-time reward streaming.**
+
+RewardFlow implements advanced contract patterns including inter-contract calls, custom token mechanics with liquidity pool rewards, real-time event streaming, CI/CD automation, mobile-responsive UI, and production error tracking.
 
 ## Features
 

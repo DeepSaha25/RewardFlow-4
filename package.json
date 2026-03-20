@@ -1,7 +1,7 @@
 {
-  "name": "advanced-contract-production",
+  "name": "reward-flow",
   "version": "1.0.0",
-  "description": "",
+  "description": "Real-time liquidity pool with inter-contract rewards and event streaming",
   "main": "index.js",
   "scripts": {
     "test": "npm run -w contracts test",
