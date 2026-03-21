@@ -6,7 +6,7 @@
   "scripts": {
     "test": "hardhat test",
     "build": "hardhat compile",
-    "deploy": "hardhat run scripts/deploy.ts --network localhost",
+    "deploy": "hardhat run scripts/deploy.ts",
     "clean": "hardhat clean"
   },
   "keywords": [],

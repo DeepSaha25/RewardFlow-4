@@ -1,8 +1,9 @@
 import { config as loadEnv } from "dotenv";
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import path from "path";
 
-loadEnv();
+loadEnv({ path: path.resolve(__dirname, ".env") });
 
 const config: HardhatUserConfig = {
   solidity: {
