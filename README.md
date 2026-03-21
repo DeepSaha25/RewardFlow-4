@@ -6,26 +6,12 @@
 
 ---
 
-## 🎯 Live Demo
-
-### **[🚀 Visit Live Application](https://reward-flow-eta.vercel.app/)**
+## 🎯 Live Demo :- https://reward-flow-eta.vercel.app
 
 **Network:** Sepolia Testnet
 
 ---
 
-## 📋 Requirements Status - ALL MET ✅
-
-| Requirement | Status | Details |
-|-------------|--------|---------|
-| **Inter-Contract Calls** | ✅ | LiquidityPool calls AdvancedToken.mint() for rewards |
-| **Custom Token/Pool** | ✅ | Both deployed to Sepolia |
-| **CI/CD Pipeline** | ✅ | GitHub Actions passing all checks |
-| **Mobile Responsive** | ✅ | Single column layout on mobile |
-| **8+ Commits** | ✅ | 11 commits total |
-| **Public Repository** | ✅ | All code visible on GitHub |
-
----
 
 ## 📸 Submission Evidence
 
@@ -290,24 +276,6 @@ npm run -w web dev
 
 ---
 
-## 📊 Git History
-
-11 commits (exceeds 8+ requirement):
-
-```
-19ca4cb fix: update CI/CD pipeline to run on master branch
-de6c847 trigger ci/cd
-4579a6c style: refine layout and spacing for responsiveness
-e5e4222 style: enhance App.css with hover effects and responsive adjustments
-9994f39 chore: update Hardhat config and add .vercel to .gitignore
-e35c7fa docs: add step-by-step deployment checklist
-...and 5 more commits
-```
-
-View full history: `git log --oneline --all`
-
----
-
 ## ✅ Submission Checklist
 
 ### ✅ All Requirements Met
@@ -348,6 +316,3 @@ MIT License
 
 ---
 
-**Last Updated:** March 21, 2026  
-**Status:** ✅ Production Ready  
-**All Requirements:** ✅ Complete
