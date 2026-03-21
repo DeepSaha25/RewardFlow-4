@@ -285,7 +285,7 @@ npm run -w web dev
 - [x] **Liquidity pool deployed** ← LiquidityPool on Sepolia
 - [x] **CI/CD pipeline running** ← GitHub Actions passing
 - [x] **Mobile responsive** ← Single column on <980px
-- [x] **8+ meaningful commits** ← 11 commits total
+- [x] **8+ meaningful commits** ← 21 commits total
 - [x] **Public GitHub repo** ← DeepSaha25/RewardFlow-4
 - [x] **Live demo link** ← https://reward-flow-eta.vercel.app/
 - [x] **Mobile screenshot** ← mobileUi.png
