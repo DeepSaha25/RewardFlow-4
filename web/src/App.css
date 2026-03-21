@@ -1,8 +1,9 @@
 .app-shell {
-  width: min(1120px, 100% - 2rem);
+  width: min(1120px, 100% - 1rem);
   margin: 2.5rem auto 3rem;
   display: grid;
   gap: 1.5rem;
+  padding: 0 0.5rem;
 }
 
 .hero {
@@ -132,6 +133,7 @@
   display: flex;
   gap: 0.8rem;
   margin-top: 1.1rem;
+  flex-wrap: wrap;
 }
 
 button {
@@ -217,8 +219,15 @@ button.ghost:hover {
 }
 
 @media (max-width: 980px) {
+  .app-shell {
+    width: min(100%, 100% - 1rem);
+    margin: 1.5rem auto 2rem;
+    gap: 1rem;
+  }
+
   .grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .hero {
@@ -226,11 +235,51 @@ button.ghost:hover {
   }
 
   .hero h1 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
   }
 
   .panel {
     padding: 1.25rem;
+  }
+
+  .panel h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .metrics,
+  .event-panel {
+    min-height: auto;
+  }
+
+  .action-panel input {
+    padding: 0.7rem 0.9rem;
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .metric-row {
+    padding: 0.6rem 0;
+  }
+
+  .event-panel li {
+    padding: 0.7rem 0.9rem;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .event-panel time {
+    text-align: right;
   }
 }
 
