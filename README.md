@@ -1,4 +1,4 @@
-# 🌊 RewardFlow
+# 🌊 RewardFlow dapp
 
 **A production-ready dApp for inter-contract liquidity pooling with real-time reward streaming.**
 
