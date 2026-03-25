@@ -1,0 +1,27 @@
+[package]
+name = "reward-flow-stellar"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+soroban-sdk = "21.0"
+soroban-token-sdk = "21.0"
+
+[profile.release]
+opt-level = "z"
+overflow-checks = true
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
+
+[[example]]
+name = "token"
+path = "examples/token.rs"
+
+[[example]]
+name = "pool"
+path = "examples/pool.rs"

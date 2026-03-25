@@ -1,12 +1,12 @@
 {
   "name": "reward-flow",
   "version": "1.0.0",
-  "description": "Real-time liquidity pool with inter-contract rewards and event streaming",
+  "description": "Stellar Soroban liquidity pool with inter-contract rewards and event streaming",
   "main": "index.js",
   "scripts": {
-    "test": "npm run -w contracts test",
-    "build": "npm run -w contracts build && npm run -w web build",
-    "lint": "npm run -w web lint"
+    "build": "npm run -w web build",
+    "lint": "npm run -w web lint",
+    "dev": "npm run -w web dev"
   },
   "keywords": [],
   "author": "",

@@ -7,9 +7,9 @@ on:
     branches: [master, main]
 
 jobs:
-  # Smart Contract CI
+  # Smart Contract CI (Stellar Soroban)
   smart-contract:
-    name: Smart Contract Tests & Build
+    name: Smart Contract Build (Soroban)
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -18,30 +18,43 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
         with:
-          node-version: 20
-          cache: npm
-          cache-dependency-path: contracts/package-lock.json
+          targets: wasm32-unknown-unknown
 
-      - name: Install root dependencies
-        run: npm ci --prefix ..
+      - name: Cache Rust dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/
+            ~/.cargo/git/
+            contracts/target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
-      - name: Install contract dependencies
-        run: npm ci
+      - name: Install Stellar CLI
+        run: curl https://github.com/stellar/rs-soroban-cli/releases/download/v21.0.0/soroban-cli-21.0.0-x86_64-unknown-linux-gnu.tar.gz | tar xz
 
-      - name: Compile smart contracts
-        run: npm run build
+      - name: Build pool contract
+        run: cd pool && cargo build --release --target wasm32-unknown-unknown
+
+      - name: Build token contract
+        run: cd token && cargo build --release --target wasm32-unknown-unknown
         
-      - name: Type check contracts
-        run: npx tsc --noEmit
+      - name: Verify build artifacts
+        run: |
+          ls -la pool/target/wasm32-unknown-unknown/release/
+          ls -la token/target/wasm32-unknown-unknown/release/
+          echo "✓ Soroban contracts built successfully"
 
-      - name: Run smart contract tests
-        run: npm run test
-
-      - name: Clean artifacts
-        run: npm run clean
+      - name: Upload contract artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: soroban-contracts
+          path: |
+            contracts/pool/target/wasm32-unknown-unknown/release/
+            contracts/token/target/wasm32-unknown-unknown/release/
 
   # Frontend CI
   frontend:
@@ -97,13 +110,16 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Install all dependencies
-        run: npm ci
+      - name: Install frontend dependencies
+        run: npm ci --prefix web
 
-      - name: Verify workspace structure
+      - name: Build frontend
+        run: npm run -w web build
+
+      - name: Verify build artifacts
         run: |
-          npm run build
-          echo "✅ All packages built successfully"
+          [ -d web/dist ] && echo "✓ Frontend built successfully" || exit 1
+          ls -la web/dist/ | head -20
 
       - name: Report success
-        run: echo "🎉 CI/CD pipeline completed successfully"
+        run: echo "🎉 All builds completed successfully (Soroban + React)"

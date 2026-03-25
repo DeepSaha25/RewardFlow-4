@@ -1,10 +1,13 @@
 node_modules/
 **/node_modules/
 web/dist/
-contracts/artifacts/
-contracts/cache/
-contracts/typechain-types/
+contracts/target/
+**/target/
+contracts/Cargo.lock
 coverage/
 .env
 **/.env
 .DS_Store
+.vercel/
+**/.soroban/
+*.wasm
