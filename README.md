@@ -129,11 +129,11 @@ npm run -w web dev
 
 Add the real values below after deployment and transaction execution.
 
-- Token contract ID: PENDING
-- Pool contract ID: PENDING
-- Deployment tx hash (token): PENDING
-- Deployment tx hash (pool): PENDING
-- Inter-contract call tx hash (stake/unstake): PENDING
+- Token contract ID: CCC5SUL34JLNNXGXHBKLMF2LGA35U3EF74RDEOTZ3ZD3VDE5PDR7J7L5
+- Pool contract ID: CB6EAJINTG4O4LJYTDRYMX76MC3CX4ZDZUX5MWGXHI5INS2UI66P3QUH
+- Deployment tx hash (token): 6a85b24685d790c2078eec650de5f2f0bbf4010d7b3cec59a1a57425abf465bb
+- Deployment tx hash (pool): e4471c06d819c6e86a641004cb59469baabffb58a2bb11db0d0560633142f604
+- Inter-contract call tx hash (stake/unstake): baeedaac47a12df4ac723a6432ea99a55698361439a104b32df3651a612414e7
 
 Reviewer link format:
 
