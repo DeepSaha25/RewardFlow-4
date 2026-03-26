@@ -26,7 +26,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   const sorobanRpc = useMemo(
-    () => new StellarSDK.SorobanRpc.Server(stellarNetwork.rpcUrl),
+    () => new StellarSDK.rpc.Server(stellarNetwork.rpcUrl),
     []
   );
 

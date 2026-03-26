@@ -3,7 +3,7 @@
 import * as StellarSDK from "@stellar/stellar-sdk";
 import { stellarNetwork, tokenAddress, poolAddress } from "./stellar-contracts";
 
-const server = new StellarSDK.SorobanRpc.Server(stellarNetwork.rpcUrl);
+const server = new StellarSDK.rpc.Server(stellarNetwork.rpcUrl);
 const keypair = StellarSDK.Keypair.random(); // Placeholder - replaced by wallet auth
 
 /// Get account details from Stellar
@@ -73,7 +73,7 @@ export async function readContractState(contractId: string, dataKey: string) {
       StellarSDK.xdr.ScVal.scValTypeSymbol(
         StellarSDK.xdr.ScSymbol.scSymbol(dataKey)
       ),
-      StellarSDK.SorobanRpc.Durability.Persistent
+      "persistent" as any
     );
     return contractDataXdr;
   } catch (error) {

@@ -20,7 +20,8 @@ export async function connectWallet(): Promise<ConnectWalletResult> {
     }
 
     // Request user approval
-    const publicKey = await FreighterAPI.getPublicKey();
+    const response: any = await FreighterAPI.requestAccess();
+    const publicKey = response.address || response;
     
     if (!publicKey) {
       return {
@@ -57,7 +58,8 @@ export async function signTransaction(transactionXDR: string): Promise<string | 
 /// Get public key from connected wallet
 export async function getPublicKey(): Promise<string | null> {
   try {
-    return await FreighterAPI.getPublicKey();
+    const response: any = await FreighterAPI.getAddress();
+    return response.address || response;
   } catch (error) {
     console.error("Failed to get public key:", error);
     return null;
@@ -79,7 +81,8 @@ export function onWalletChange(callback: (publicKey: string | null) => void): ()
   let lastKey: string | null = null;
   const intervalId = setInterval(async () => {
     try {
-      const currentKey = await FreighterAPI.getPublicKey();
+      const response: any = await FreighterAPI.getAddress();
+      const currentKey = response.address || response;
       if (currentKey !== lastKey) {
         lastKey = currentKey;
         callback(currentKey);
