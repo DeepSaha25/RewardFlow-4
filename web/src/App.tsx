@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import * as Sentry from "@sentry/react";
-import * as StellarSDK from "@stellar/js-stellar-sdk";
+import * as StellarSDK from "@stellar/stellar-sdk";
 import "./App.css";
 import { tokenAddress, poolAddress, isConfigured, stellarNetwork } from "./stellar-contracts";
 import { connectWallet, isWalletAvailable, onWalletChange } from "./stellar-wallet";

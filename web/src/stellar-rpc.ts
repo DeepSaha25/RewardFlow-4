@@ -1,6 +1,6 @@
 // Stellar RPC and Contract Interaction Utilities
 
-import * as StellarSDK from "@stellar/js-stellar-sdk";
+import * as StellarSDK from "@stellar/stellar-sdk";
 import { stellarNetwork, tokenAddress, poolAddress } from "./stellar-contracts";
 
 const server = new StellarSDK.SorobanRpc.Server(stellarNetwork.rpcUrl);

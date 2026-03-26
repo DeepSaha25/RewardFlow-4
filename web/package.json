@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@sentry/react": "^10.45.0",
-    "@stellar/js-stellar-sdk": "^11.0.0",
-    "@stellar/freighter-api": "^9.0.0",
+    "@stellar/stellar-sdk": "^14.6.1",
+    "@stellar/freighter-api": "^6.0.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
